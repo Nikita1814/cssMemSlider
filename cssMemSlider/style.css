@@ -1,4 +1,4 @@
-
+/*Making desktop look like on the image*/
 body{
     margin:0 auto;
     width:100vw;
@@ -14,7 +14,7 @@ body{
 .wrapper{
 width:100%;
  height:100%;
- background-color:darkred;
+ background-color:darkslateblue;
  display: flex;
  flex-direction: column;
  justify-content:space-between;
@@ -30,6 +30,8 @@ width:100%;
     width:100%;
     height:100%;
 }
+
+
 .slider-item-one{
     width:100%;
     height:100%;
@@ -39,8 +41,7 @@ width:100%;
     background-size: contain;
 }
 .slider-item-two{
-    display:none;
-    width:100%;
+    width:0;
     height:100%;
     background-image: url(memes/meme-two.jpg);
     background-position: center;
@@ -48,7 +49,7 @@ width:100%;
     background-size: contain;
 }
 .slider-item-three{
-    display:none;
+  width:0;
     width:100%;
     height:100%;
     background-image: url(memes/meme-three.jpg);
@@ -57,7 +58,7 @@ width:100%;
     background-size: contain;
 }
 .slider-item-four{
-    display:none;
+    width:0;
     width:100%;
     height:100%;
     background-image: url(memes/meme-four.jpg);
@@ -72,23 +73,32 @@ width:100%;
 .captions p{
 margin:0;
 color:white;
+transition: width 1s ease-in-out;
+transition: height 1s ease-in-out;
 }
 
 .caption-one{
  font-size:1.5rem;
-  
+  width:100%;
+  height:100%;
 }
 .caption-two{
     font-size:1.5rem;
-    display: none;   
+   width:0; 
+   height:0;
+ 
    }
 .caption-three{
     font-size:1.5rem;
-    display: none;   
+    width:0; 
+    height:0;
+   
    }
 .caption-four{
     font-size:1.5rem;
-    display: none;   
+    width:0; 
+    height:0;
+ 
    }
 
    .controls-wrap{
@@ -116,3 +126,38 @@ height:13%;
 background-color: darkseagreen;
 display:flex;
 }
+
+/*adding transitional anims to slides*/
+.slider div{
+    transition: width 1s ease-in-out;
+    }
+
+
+/*adapting for mobile*/
+@media (max-width:420px){
+   
+    body{
+        padding-left:3%;
+        padding-right:3%;
+        padding-bottom:3%;
+        padding-top:3%;
+    }
+    .lower{
+        height:39%;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .slider-window{
+        height:46%;
+    }
+    .controls-wrap{
+        width:100%;
+        justify-content: center;
+    }
+    .captions{
+        height:70%;
+    }
+
+}
+
+/*adding functionality through bullets*/
