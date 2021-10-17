@@ -8,29 +8,29 @@ body{
     padding-top:1%;
     padding-bottom:1%;
     overflow: hidden;
+    background-color:darkslateblue;
 }
 *{
     box-sizing: border-box;
 }
-.wrapper{
+.wrapper{    
 width:100%;
  height:100%;
  background-color:darkslateblue;
  display: flex;
  flex-direction: column;
  justify-content:space-between;
+ overflow:hidden;
+ position: relative;
 
 }
-.slider-window{
-    width:100%;
-    height:80%;
-    overflow:hidden;
-     
-}
+
 .slider{
     display: flex;
-    width:100%;
-    height:100%;
+    width:400%;
+    height:80%;
+    transition: margin 1s ease-in-out;
+    background-color: black;
 }
 
 
@@ -43,7 +43,7 @@ width:100%;
     background-size: contain;
 }
 .slider-item-two{
-    width:0;
+    width:100%;
     height:100%;
     background-image: url(memes/meme-two.jpg);
     background-position: center;
@@ -51,7 +51,7 @@ width:100%;
     background-size: contain;
 }
 .slider-item-three{
-    width:0;
+    width:100%;
     height:100%;
     background-image: url(memes/meme-three.jpg);
     background-position: center;
@@ -59,7 +59,7 @@ width:100%;
     background-size: contain;
 }
 .slider-item-four{
-    width:0;
+    width:100%;
     height:100%;
     background-image: url(memes/meme-four.jpg);
     background-position: center;
@@ -68,13 +68,18 @@ width:100%;
 }
 
 .captions{
- width:72%;
+height:13%;
+background-color: darkslateblue;
+display:flex;
+ width:400%;
+ transition: margin 1s ease-in-out
 }
 .captions p{
 margin:0;
 color:white;
-transition: width 1s ease-in-out;
+;
 transition: height 1s ease-in-out;
+
 }
 
 .caption-one{
@@ -84,20 +89,19 @@ transition: height 1s ease-in-out;
 }
 .caption-two{
     font-size:1.5rem;
-   width:0; 
-   height:0;
+   width:100%; 
+   height:100%;
  
    }
 .caption-three{
     font-size:1.5rem;
-    width:0; 
-    height:0;
-   
+    width:100%; 
+    height:100%;
    }
 .caption-four{
     font-size:1.5rem;
-    width:0; 
-    height:0;
+    width:100%; 
+    height:100%;
  
    }
 
@@ -128,8 +132,8 @@ border: solid white ;
 background-color: white;
 }*/
 label{
+position:absolute;
 display: block;
-position: relative;
 width:0.7rem;
 height:0.7rem;
 border-radius:50%;
@@ -137,21 +141,75 @@ border: solid white ;
 background-color: white;
 }
 .bullet{
-    position:relative;
+    /*opacity: 0;*/
+    position:absolute;
     right:0.5rem;
-    bottom:0.51rem;
+    border:0;
+    margin:0 auto;
+    opacity: 0;  
+    /*bottom:0.51rem;*/
+}
+.bullet:hover{
+    cursor:pointer
+}
+#one{
+ bottom:11%;
+ right:5.5%; 
+ z-index:1;
+
+}
+#two{
+bottom:11%;
+right:3.5%;
+z-index:1;      
+}
+#three{
+bottom:11%;
+right:1.75%;
+z-index:1;  
+}
+#four{  
+bottom:11%;
+right:0;
+z-index:1;  
+}
+.bullet-one{
+bottom:11%;
+right:5.5%;   
+}
+#one:hover ~ .bullet-one{
+    background-color:aqua;
+    border-color: aqua;
+}
+.bullet-two{
+bottom:11%;
+right:3.5%;    
+}
+#two:hover ~ .bullet-two{
+    background-color:aqua;
+    border-color: aqua;
+}
+.bullet-three{
+bottom:11%;
+right:1.75%;
+}
+#three:hover ~ .bullet-three{
+    background-color:aqua;
+    border-color: aqua;
+}
+.bullet-four{
+bottom:11%;
+right:0;
+}
+#four:hover ~ .bullet-four{
+    background-color:aqua;
+    border-color: aqua;
 }
 
-.lower{
-height:13%;
-background-color: darkseagreen;
-display:flex;
-}
+
 
 /*adding transitional anims to slides*/
-.slider div{
-    transition: width 1s ease-in-out;
-    }
+
 
 
 /*adapting for mobile*/
@@ -182,3 +240,41 @@ display:flex;
 }
 
 /*adding functionality to  bullets*/
+#one:checked  ~ .bullet-one {
+    background-color: transparent;   
+}
+
+#two:checked  ~ .bullet-two {
+    background-color: transparent;  
+}
+#two:checked ~ .slider{
+    margin-left:-100%;
+}
+#two:checked ~ .captions{
+    margin-left:-100%;
+}
+
+
+#three:checked  ~ .bullet-three {
+    background-color: transparent;  
+}
+#three:checked ~ .slider{
+    margin-left:-200%;
+}
+#three:checked ~ .captions{
+    margin-left:-200%;
+}
+
+#four:checked  ~ .bullet-four {
+    background-color: transparent; 
+}
+#four:checked ~ .slider{
+    margin-left:-300%;
+}
+#four:checked ~ .captions{
+    margin-left:-300%;
+}
+
+/*#one:checked .bullet-one, .bullet-two, .bullet-three, .bullet-four{
+ background-color: white;   
+}*/
