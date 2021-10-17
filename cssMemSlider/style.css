@@ -77,29 +77,28 @@ display:flex;
 .captions p{
 margin:0;
 color:white;
-;
 transition: height 1s ease-in-out;
-
+font-size:2vw;
 }
 
 .caption-one{
- font-size:1.5rem;
+
   width:100%;
   height:100%;
 }
 .caption-two{
-    font-size:1.5rem;
+
    width:100%; 
    height:100%;
  
    }
 .caption-three{
-    font-size:1.5rem;
+
     width:100%; 
     height:100%;
    }
 .caption-four{
-    font-size:1.5rem;
+
     width:100%; 
     height:100%;
  
@@ -134,8 +133,8 @@ background-color: white;
 label{
 position:absolute;
 display: block;
-width:0.7rem;
-height:0.7rem;
+width:1%;
+height:2%;
 border-radius:50%;
 border: solid white ;
 background-color: white;
@@ -165,7 +164,7 @@ z-index:1;
 }
 #three{
 bottom:11%;
-right:1.75%;
+right:1.5%;
 z-index:1;  
 }
 #four{  
@@ -183,7 +182,7 @@ right:5.5%;
 }
 .bullet-two{
 bottom:11%;
-right:3.5%;    
+right:3.6%;    
 }
 #two:hover ~ .bullet-two{
     background-color:aqua;
@@ -221,21 +220,64 @@ right:0;
         padding-bottom:3%;
         padding-top:3%;
     }
-    .lower{
-        height:39%;
-        flex-direction: column-reverse;
-        justify-content: space-between;
+    .captions{
+        height:20%;
+        margin-bottom:30%;
     }
-    .slider-window{
+    .slider{
         height:46%;
     }
-    .controls-wrap{
-        width:100%;
-        justify-content: center;
+    label{
+     width:3%;
+     height:2%;
     }
-    .captions{
-        height:70%;
-    }
+    
+    #one{
+        bottom:44%;
+        right:55%;
+        z-index:1;
+       
+       }
+       #two{
+        bottom:44%;
+        right:50%; 
+       z-index:1;      
+       }
+       #three{
+        bottom:44%;
+        right:45%;
+       z-index:1;  
+       }
+       #four{  
+        bottom:44%;
+        right:40%;
+       z-index:1;  
+       }
+
+       .bullet-one{
+        bottom:44%;
+        right:55%;   
+        }
+    
+        .bullet-two{
+        bottom:44%;
+        right:50%;    
+        }
+   
+        .bullet-three{
+        bottom:44%;
+        right:45%;
+        }
+     
+        .bullet-four{
+        bottom:44%;
+        right:40%;
+        }
+     
+        .captions p{
+            font-size: 5vw ;
+        }
+
 
 }
 
