@@ -1,0 +1,322 @@
+/*Making desktop look like on the image*/
+body{
+    margin:0 auto;
+    width:100vw;
+    height:100vh;
+    padding-left:2%;
+    padding-right:2%;
+    padding-top:1%;
+    padding-bottom:1%;
+    overflow: hidden;
+    background-color:darkslateblue;
+}
+*{
+    box-sizing: border-box;
+}
+.wrapper{    
+width:100%;
+ height:100%;
+ background-color:darkslateblue;
+ display: flex;
+ flex-direction: column;
+ justify-content:space-between;
+ overflow:hidden;
+ position: relative;
+
+}
+
+.slider{
+    display: flex;
+    width:400%;
+    height:80%;
+    transition: margin 1s ease-in-out;
+    background-color: black;
+}
+
+
+.slider-item-one{
+    width:100%;
+    height:100%;
+    background-image: url(memes/meme-one.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.slider-item-two{
+    width:100%;
+    height:100%;
+    background-image: url(memes/meme-two.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.slider-item-three{
+    width:100%;
+    height:100%;
+    background-image: url(memes/meme-three.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.slider-item-four{
+    width:100%;
+    height:100%;
+    background-image: url(memes/meme-four.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.captions{
+height:13%;
+background-color: darkslateblue;
+display:flex;
+ width:400%;
+ transition: margin 1s ease-in-out
+}
+.captions p{
+margin:0;
+color:white;
+transition: height 1s ease-in-out;
+font-size:2vw;
+}
+
+.caption-one{
+
+  width:100%;
+  height:100%;
+}
+.caption-two{
+
+   width:100%; 
+   height:100%;
+ 
+   }
+.caption-three{
+
+    width:100%; 
+    height:100%;
+   }
+.caption-four{
+
+    width:100%; 
+    height:100%;
+ 
+   }
+
+   .controls-wrap{
+   width:28%;
+   display:flex;
+   justify-content:flex-end;
+  
+   }
+   .controls{
+    width:30%;
+    display:flex;
+    justify-content:space-between; 
+   }
+
+/*.bullet{
+opacity:0;    
+}*/
+
+/* .bullet:after{
+content:'';
+/*width:1rem;*/
+/*height:1rem;
+width:100%;
+height:100%;
+border-radius:50%;
+border: solid white ;
+background-color: white;
+}*/
+label{
+position:absolute;
+display: block;
+width:1%;
+height:2%;
+border-radius:50%;
+border: solid white ;
+background-color: white;
+}
+.bullet{
+    /*opacity: 0;*/
+    position:absolute;
+    right:0.5rem;
+    border:0;
+    margin:0 auto;
+    opacity: 0;  
+    /*bottom:0.51rem;*/
+}
+.bullet:hover{
+    cursor:pointer
+}
+#one{
+ bottom:11%;
+ right:5.5%; 
+ z-index:1;
+
+}
+#two{
+bottom:11%;
+right:3.5%;
+z-index:1;      
+}
+#three{
+bottom:11%;
+right:1.5%;
+z-index:1;  
+}
+#four{  
+bottom:11%;
+right:0;
+z-index:1;  
+}
+.bullet-one{
+bottom:11%;
+right:5.5%;   
+}
+#one:hover ~ .bullet-one{
+    background-color:aqua;
+    border-color: aqua;
+}
+.bullet-two{
+bottom:11%;
+right:3.6%;    
+}
+#two:hover ~ .bullet-two{
+    background-color:aqua;
+    border-color: aqua;
+}
+.bullet-three{
+bottom:11%;
+right:1.75%;
+}
+#three:hover ~ .bullet-three{
+    background-color:aqua;
+    border-color: aqua;
+}
+.bullet-four{
+bottom:11%;
+right:0;
+}
+#four:hover ~ .bullet-four{
+    background-color:aqua;
+    border-color: aqua;
+}
+
+
+
+/*adding transitional anims to slides*/
+
+
+
+/*adapting for mobile*/
+@media (max-width:420px){
+   
+    body{
+        padding-left:3%;
+        padding-right:3%;
+        padding-bottom:3%;
+        padding-top:3%;
+    }
+    .captions{
+        height:20%;
+        margin-bottom:30%;
+    }
+    .slider{
+        height:46%;
+    }
+    label{
+     width:3%;
+     height:2%;
+    }
+    
+    #one{
+        bottom:44%;
+        right:55%;
+        z-index:1;
+       
+       }
+       #two{
+        bottom:44%;
+        right:50%; 
+       z-index:1;      
+       }
+       #three{
+        bottom:44%;
+        right:45%;
+       z-index:1;  
+       }
+       #four{  
+        bottom:44%;
+        right:40%;
+       z-index:1;  
+       }
+
+       .bullet-one{
+        bottom:44%;
+        right:55%;   
+        }
+    
+        .bullet-two{
+        bottom:44%;
+        right:50%;    
+        }
+   
+        .bullet-three{
+        bottom:44%;
+        right:45%;
+        }
+     
+        .bullet-four{
+        bottom:44%;
+        right:40%;
+        }
+     
+        .captions p{
+            font-size: 5vw ;
+        }
+
+
+}
+
+/*adding functionality to  bullets*/
+#one:checked  ~ .bullet-one {
+    background-color: transparent;   
+}
+
+#two:checked  ~ .bullet-two {
+    background-color: transparent;  
+}
+#two:checked ~ .slider{
+    margin-left:-100%;
+}
+#two:checked ~ .captions{
+    margin-left:-100%;
+}
+
+
+#three:checked  ~ .bullet-three {
+    background-color: transparent;  
+}
+#three:checked ~ .slider{
+    margin-left:-200%;
+}
+#three:checked ~ .captions{
+    margin-left:-200%;
+}
+
+#four:checked  ~ .bullet-four {
+    background-color: transparent; 
+}
+#four:checked ~ .slider{
+    margin-left:-300%;
+}
+#four:checked ~ .captions{
+    margin-left:-300%;
+}
+
+/*#one:checked .bullet-one, .bullet-two, .bullet-three, .bullet-four{
+ background-color: white;   
+}*/
